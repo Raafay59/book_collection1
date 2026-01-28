@@ -1,4 +1,5 @@
 <!-- app/views/books/show.html.erb -->
 <h1>Book Details</h1>
 <h2><%= @book.title %></h2>
+<h3><%= @book.author %>, $<%= @book.price %>, published on <%= @book.published_date %></h3>
 <%= link_to 'Back', books_path %>
