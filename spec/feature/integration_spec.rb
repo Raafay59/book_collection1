@@ -6,7 +6,7 @@ RSpec.describe 'Book Management', type: :feature do
         fill_in 'Title', with: 'The Great Gatsby'
         fill_in 'Author', with: 'F. Scott Fitzgerald'
         fill_in 'Price', with: '10.99'
-        fill_in 'Date published', with: '1925-04-10'
+        fill_in 'Published date', with: '1925-04-10'
         click_button 'Create Book'
         expect(page).to have_content('Book was successfully created.')
     end
@@ -15,7 +15,7 @@ RSpec.describe 'Book Management', type: :feature do
         fill_in 'Title', with: ''
         fill_in 'Author', with: 'F. Scott Fitzgerald'
         fill_in 'Price', with: '10.99'
-        fill_in 'Date published', with: '1925-04-10'
+        fill_in 'Published date', with: '1925-04-10'
         click_button 'Create Book'
         expect(page).not_to have_content('Book was successfully created.')
     end
@@ -24,7 +24,7 @@ RSpec.describe 'Book Management', type: :feature do
         fill_in 'Title', with: 'The Great Gatsby'
         fill_in 'Author', with: ''
         fill_in 'Price', with: '10.99'
-        fill_in 'Date published', with: '1925-04-10'
+        fill_in 'Published date', with: '1925-04-10'
         click_button 'Create Book'
         expect(page).not_to have_content('Book was successfully created.')
     end
@@ -33,7 +33,7 @@ RSpec.describe 'Book Management', type: :feature do
         fill_in 'Title', with: 'The Great Gatsby'
         fill_in 'Author', with: 'F. Scott Fitzgerald'
         fill_in 'Price', with: '-5.00'
-        fill_in 'Date published', with: '1925-04-10'
+        fill_in 'Published date', with: '1925-04-10'
         click_button 'Create Book'
         expect(page).not_to have_content('Book was successfully created.')
     end
@@ -42,7 +42,7 @@ RSpec.describe 'Book Management', type: :feature do
         fill_in 'Title', with: 'The Great Gatsby'
         fill_in 'Author', with: 'F. Scott Fitzgerald'
         fill_in 'Price', with: '10.99'
-        fill_in 'Date published', with: (Date.today + 1).to_s
+        fill_in 'Published date', with: (Date.today + 1).to_s
         click_button 'Create Book'
         expect(page).not_to have_content('Book was successfully created.')
     end
