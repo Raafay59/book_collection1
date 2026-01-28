@@ -1,0 +1,14 @@
+<h1>Books</h1>
+
+<%= link_to 'New Book', new_book_path %>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.title, book_path(book) %>
+      |
+      <%= link_to 'Edit', edit_book_path(book) %>
+      |
+      <%= link_to 'Delete', book_path(book), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
