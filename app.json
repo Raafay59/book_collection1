@@ -1,0 +1,36 @@
+{
+    "stack": "heroku-22",
+
+    "addons": ["heroku-postgresql:in-dyno"],
+
+    "environments": {
+        "review": {
+            "addons": ["heroku-postgresql:in-dyno"],
+
+            "scripts": {
+                "postdeploy": "bundle exec rails db:schema:load"
+            },
+
+            "env": {
+                "RAILS_ENV": "review"
+            }
+        }
+    },
+
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        },
+
+        {
+            "url": "heroku/ruby"
+        }
+    ],
+
+    "env": {
+        "NODE_ENV": "production",
+
+        "YARN_PRODUCTION": "true",
+        "DISABLE_DATABASE_ENVIRONMENT_CHECK": "1"
+    }
+}

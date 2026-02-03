@@ -13,6 +13,8 @@
 # gem "pg"
 #
 default: &default
+    username: postgres
+    password:
     adapter: postgresql
     encoding: unicode
     # For details on connection pooling, see Rails configuration guide
@@ -22,6 +24,9 @@ default: &default
 development:
     <<: *default
     database: book_collection_development
+    username: postgres
+    password:
+    host: localhost
 
     # The specified database role being used to connect to PostgreSQL.
     # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -80,6 +85,7 @@ test:
 production:
     primary: &primary_production
         <<: *default
+        url: <%= ENV["DATABASE_URL"] %>
         database: book_collection_production
         username: book_collection
         password: <%= ENV["BOOK_COLLECTION_DATABASE_PASSWORD"] %>
