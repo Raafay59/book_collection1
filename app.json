@@ -12,9 +12,7 @@
             },
 
             "env": {
-                "RAILS_ENV": "review",
-
-                "DISABLE_DATABASE_ENVIRONMENT_CHECK": "1"
+                "RAILS_ENV": "review"
             }
         }
     },
@@ -32,6 +30,7 @@
     "env": {
         "NODE_ENV": "production",
 
-        "YARN_PRODUCTION": "true"
+        "YARN_PRODUCTION": "true",
+        "DISABLE_DATABASE_ENVIRONMENT_CHECK": "1"
     }
 }
