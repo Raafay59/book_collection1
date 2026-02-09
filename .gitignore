@@ -4,6 +4,9 @@
 # belong in git's global ignore instead:
 # `$XDG_CONFIG_HOME/git/ignore` or `~/.config/git/ignore`
 
+# ignore the client secret file for Google OAuth2
+/client_secret_537248606334-0g9p1eeh6h13pie9o11fisggaohcv8ne.apps.googleusercontent.com.json
+
 # Ignore bundler config.
 /.bundle
 
